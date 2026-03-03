@@ -21,7 +21,7 @@ $image_url   = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
 <section class="section-hero" id="hero">
 	<div class="container">
 		<div class="hero-inner">
-			<span class="hero-name hero-name--top">VERONIKA</span>
+			<div class="hero-name hero-name--top"><span>veronika</span><span>contemporary</span></div>
 			<a href="<?php echo esc_url( $artwork_url ); ?>" class="hero-image-link">
 				<img
 					src="<?php echo esc_url( $image_url ); ?>"
@@ -29,7 +29,7 @@ $image_url   = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
 					class="hero-image"
 				>
 			</a>
-			<span class="hero-name hero-name--bottom">KHACHATURIAN</span>
+      <div class="hero-name hero-name--bottom"><span>KHACHATURIAN</span><span>artist</span></div>
 		</div>
 	</div>
 </section>

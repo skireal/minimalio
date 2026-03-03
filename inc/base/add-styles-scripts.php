@@ -22,7 +22,7 @@ if ( ! function_exists( 'minimalio_scripts' ) ) {
 		/**
 		 * Load the compiled and minified stylesheet
 		 */
-		wp_enqueue_style( 'minimalio_theme', $directory . '/assets/dist/css/minimalio-theme.min.css', false, $ver );
+		wp_enqueue_style( 'minimalio_theme', $directory . '/assets/dist/css/minimalio-theme.css', false, $ver );
 
 		/**
 		 * Load WordPress' jQuery version

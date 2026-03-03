@@ -5122,17 +5122,19 @@ figcaption {
 }
 
 .section-about .about-label {
-  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
+
+  color: #415a77;
+  font-size: 1.3rem;
 }
 
 .section-about .about-divider {
   width: 100%;
   height: 1px;
-  background: #000;
-  margin-bottom: 3.5rem;
+  background: #415a77;
+  margin-bottom: 2.5rem;
 }
 
 .section-about .about-quotes {
@@ -5150,7 +5152,7 @@ figcaption {
 
 .section-about .about-quote__text {
   font-size: 1.1rem;
-  line-height: 1.75;
+  line-height: 1.35;
   font-style: italic;
   color: #000;
   margin: 0 0 0.75rem;
@@ -5158,16 +5160,18 @@ figcaption {
 
 .section-about .about-quote__text::before {
   content: '\201C';
-  color: #ccc;
-  font-style: normal;
   margin-right: 0.1em;
+  color: #415a77;
+  font-style: normal;
+  font-size: 2rem;
 }
 
 .section-about .about-quote__text::after {
   content: '\201D';
-  color: #ccc;
   font-style: normal;
   margin-left: 0.05em;
+  color: #415a77;
+  font-size: 2rem;
 }
 
 .section-about .about-quote__source {
@@ -5175,7 +5179,7 @@ figcaption {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #444;
+  color: #415a77;
   font-style: normal;
   text-align: right;
   max-width: 680px;

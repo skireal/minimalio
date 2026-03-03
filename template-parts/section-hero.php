@@ -16,7 +16,7 @@ $artwork     = get_posts( [
 	'post_status'    => 'publish',
 ] );
 $artwork_url = ! empty( $artwork ) ? get_permalink( $artwork[0] ) : '#';
-$image_url   = get_template_directory_uri() . '/assets/borsch.jpg';
+$image_url   = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
 ?>
 <section class="section-hero" id="hero">
 	<div class="container">

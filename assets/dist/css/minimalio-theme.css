@@ -5198,3 +5198,91 @@ figcaption {
     max-width: 100%;
   }
 }
+
+/* ──────────────────────────────────────────
+   Artworks section (homepage)
+   ────────────────────────────────────────── */
+.section-artworks {
+  padding: 5rem 0;
+}
+
+.section-artworks .artworks-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.section-artworks .artworks-divider {
+  width: 100%;
+  height: 1px;
+  background: #000;
+  margin-bottom: 3.5rem;
+}
+
+.section-artworks .artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.section-artworks .artworks-item__link {
+  display: block;
+}
+
+.section-artworks .artworks-item__link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.2s ease;
+}
+
+.section-artworks .artworks-item__link:hover img {
+  opacity: 0.82;
+}
+
+.section-artworks .artworks-item__title {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+}
+
+.section-artworks .artworks-item__title:hover {
+  color: #444;
+}
+
+.section-artworks .artworks-viewall {
+  display: block;
+  margin-top: 2.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #444;
+  text-decoration: none;
+  text-align: right;
+}
+
+.section-artworks .artworks-viewall:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .section-artworks {
+    padding: 3rem 0;
+  }
+
+  .section-artworks .artworks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-artworks .artworks-grid {
+    grid-template-columns: 1fr;
+  }
+}

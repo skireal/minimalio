@@ -38,6 +38,7 @@ if ( ! function_exists( 'minimalio_scripts' ) ) {
 		 * Load main theme script file
 		 */
 		wp_enqueue_script( 'minimalio_theme', $directory . '/assets/dist/js/minimalio-theme.min.js', false, $ver, true );
+		wp_enqueue_script( 'minimalio_my', $directory . '/assets/dist/js/my-script.js', false, $ver, true );
 
 		/**
 		 * Load conditional video scripts

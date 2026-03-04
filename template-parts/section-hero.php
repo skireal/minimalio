@@ -21,6 +21,7 @@ $image_url   = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
 					alt="<?php esc_attr_e( 'Borsch', 'minimalio' ); ?>"
 					class="hero-image"
 				>
+				<div class="hero-bubbles"></div>
       </div>
       <div class="hero-name hero-name--bottom"><span>KHACHATURIAN</span><span>artist</span></div>
 		</div>

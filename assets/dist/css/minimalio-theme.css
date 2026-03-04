@@ -5119,12 +5119,13 @@ figcaption {
 }
 
 @keyframes hero-bubble-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
     transform: scale(0.7);
   }
   50% {
-    opacity: 0.75;
+    opacity: 1;
     transform: scale(1);
   }
 }
@@ -5389,4 +5390,11 @@ figcaption {
 #wrapper-footer > div:first-child {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.footer__copyright-first-copy {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
 }

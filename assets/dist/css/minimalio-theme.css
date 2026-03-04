@@ -5110,6 +5110,38 @@ figcaption {
   height: auto;
 }
 
+/* ── Logo draw-on animation ── */
+@keyframes logo-draw {
+  0% {
+    stroke-dashoffset: 3000;
+    fill-opacity: 0;
+    stroke-opacity: 1;
+  }
+  65% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+    stroke-opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+    stroke-opacity: 0;
+  }
+}
+
+.logo-path {
+  stroke: #000000;
+  stroke-width: 1px;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  fill-opacity: 0;
+  animation: logo-draw 1.8s ease forwards;
+}
+
+.logo-path--2 {
+  animation-delay: 0.25s;
+}
+
 .header .center-logo .header__col-left {
   margin-top: 0 !important ;
 }

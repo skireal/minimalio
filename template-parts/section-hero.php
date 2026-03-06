@@ -20,6 +20,8 @@ $image_url   = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
 					src="<?php echo esc_url( $image_url ); ?>"
 					alt="<?php esc_attr_e( 'Borsch', 'minimalio' ); ?>"
 					class="hero-image"
+					fetchpriority="high"
+					loading="eager"
 				>
 				<div class="hero-bubbles"></div>
       </div>

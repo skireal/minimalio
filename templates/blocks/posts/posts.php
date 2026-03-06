@@ -265,7 +265,7 @@ if ($search) :
 
           <div class="grid grid-cols-1 sm:grid-cols-2 posts__row pswp__wrap <?php echo 'lg:grid-cols-' . $nr_columns . ''; ?>">
 
-            <?php foreach ($search->results as $post) : ?>
+            <?php $post_index = 0; foreach ($search->results as $post) : ?>
               <div class="post-item <?php if ($enable_masonry == 'masonry') : ?>post-item__masonry grid-item<?php endif; ?>">
 
                 <?php minimalio_get_part(
@@ -286,12 +286,13 @@ if ($search) :
                     'minimalio_button_label' => $button_label,
                     'minimalio_hover_image' => get_post_meta($post->ID, '_hover_image_id', true),
                     'minimalio_hover_video' => get_post_meta($post->ID, '_hover_video_id', true),
-                    'vimeo_id'             =>   get_post_meta($post->ID, '_vimeo_id', true)
+                    'vimeo_id'             =>   get_post_meta($post->ID, '_vimeo_id', true),
+                    'is_lcp'               => ( $post_index === 0 && $current_page === 1 ),
                   )
                 ); ?>
               </div>
 
-            <?php endforeach; ?>
+            <?php $post_index++; endforeach; ?>
           </div>
 
         <?php else : ?>

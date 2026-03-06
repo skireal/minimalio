@@ -32,13 +32,13 @@ if ( ! function_exists( 'minimalio_scripts' ) ) {
 		/**
 		 * Load minified and concatenated Node Modules file (See gulpfile.babel.js 'packageScripts' task)
 		 */
-		wp_enqueue_script( 'minimalio_components', $directory . '/assets/dist/js/minimalio-components.min.js', false, $ver, true );
+		wp_enqueue_script( 'minimalio_components', $directory . '/assets/dist/js/minimalio-components.min.js', false, $ver, [ 'in_footer' => true, 'strategy' => 'defer' ] );
 
 		/**
 		 * Load main theme script file
 		 */
-		wp_enqueue_script( 'minimalio_theme', $directory . '/assets/dist/js/minimalio-theme.min.js', false, $ver, true );
-		wp_enqueue_script( 'minimalio_my', $directory . '/assets/dist/js/my-script.js', false, $ver, true );
+		wp_enqueue_script( 'minimalio_theme', $directory . '/assets/dist/js/minimalio-theme.min.js', false, $ver, [ 'in_footer' => true, 'strategy' => 'defer' ] );
+		wp_enqueue_script( 'minimalio_my', $directory . '/assets/dist/js/my-script.js', false, $ver, [ 'in_footer' => true, 'strategy' => 'defer' ] );
 
 		/**
 		 * Load conditional video scripts

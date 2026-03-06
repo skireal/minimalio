@@ -18,6 +18,40 @@ defined( 'ABSPATH' ) || exit;
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php
+	// Open Graph meta tags
+	$og_post_id = get_queried_object_id();
+	$og_queried = get_queried_object();
+
+	if ( is_singular() && $og_queried instanceof WP_Post ) {
+		$og_title = get_the_title( $og_post_id );
+		$og_url   = get_permalink( $og_post_id );
+		$og_type  = ( is_singular( 'post' ) || is_singular( 'portfolio' ) ) ? 'article' : 'website';
+
+		$og_excerpt = get_post_field( 'post_excerpt', $og_post_id );
+		if ( $og_excerpt ) {
+			$og_description = wp_strip_all_tags( $og_excerpt );
+		} else {
+			$og_description = wp_trim_words( wp_strip_all_tags( get_post_field( 'post_content', $og_post_id ) ), 25, '...' );
+		}
+
+		$og_image = has_post_thumbnail( $og_post_id )
+			? get_the_post_thumbnail_url( $og_post_id, 'large' )
+			: get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
+	} else {
+		$og_title       = get_bloginfo( 'name' );
+		$og_url         = home_url( '/' );
+		$og_type        = 'website';
+		$og_description = get_bloginfo( 'description' );
+		$og_image       = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
+	}
+	?>
+	<meta property="og:title" content="<?php echo esc_attr( $og_title ); ?>">
+	<meta property="og:description" content="<?php echo esc_attr( $og_description ); ?>">
+	<meta property="og:url" content="<?php echo esc_url( $og_url ); ?>">
+	<meta property="og:type" content="<?php echo esc_attr( $og_type ); ?>">
+	<meta property="og:image" content="<?php echo esc_url( $og_image ); ?>">
+	<meta property="og:site_name" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 	<?php wp_head(); ?>
 
 

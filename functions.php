@@ -22,7 +22,6 @@ $minimalio_includes = [
 	'/base/ajax-filter.php',                        // Custom pagination for this theme.
 	'/base/pagination.php',                         // Custom pagination for this theme.
 	'/base/bootstrap-navwalker.php',                // Load custom WordPress nav walker.
-	'/base/open-graph.php',                         // Open Graph meta tags.
 	'/custom/comments.php',                         // Custom Comments file.
 	'/custom/custom-post-type.php',                 // Custom post type
 	'/custom/customizer.php',                       // Customizer additions.

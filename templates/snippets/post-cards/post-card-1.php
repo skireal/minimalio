@@ -2,6 +2,7 @@
 
 <?php $minimalio_hover = get_theme_mod( 'minimalio_settings_portfolio_hover_option' ); ?>
 <?php $minimalio_behaviour = get_theme_mod( 'minimalio_settings_portfolio_behaviour' ); ?>
+<?php $lcp_attrs = ( isset( $is_lcp ) && $is_lcp ) ? [ 'fetchpriority' => 'high', 'loading' => 'eager' ] : []; ?>
 
 <?php if ( $minimalio_behaviour === 'html_in_lightbox' ) : ?>
 
@@ -10,7 +11,7 @@
 			<figure class="relative flex flex-col w-full text-left post-card post-card-1 photoswipe-item photoswipe-html" data-card-id="<?php echo esc_attr( $id ); ?>">
 				<?php $image_data = wp_get_attachment_image_src( $card_image, 'full' ) ?: [ 0, 0, 0 ]; ?>
 				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>" data-width="<?php echo esc_attr( $image_data[1] ); ?>" data-height="<?php echo esc_attr( $image_data[2] ); ?>">
-				<?php echo wp_get_attachment_image( $card_image, 'large' ); ?>
+				<?php echo wp_get_attachment_image( $card_image, 'large', false, $lcp_attrs ); ?>
 					<?php
 					if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_image ) && $minimalio_hover === 'hover-image' ) {
 						echo wp_get_attachment_image( $minimalio_hover_image, 'full', '', [ 'class' => 'hover-image' ] );
@@ -53,7 +54,7 @@
 			<figure class="relative flex flex-col w-full text-left post-card post-card-1 photoswipe-item photoswipe-vimeo" data-card-id="<?php echo esc_attr( $id ); ?>">
 				<?php $image_data = wp_get_attachment_image_src( $card_image, 'full' ) ?: [ 0, 0, 0 ]; ?>
 				<a class="relative w-full h-full post-card__image photoswipe-image" href="<?php echo esc_url( wp_get_attachment_url( $card_image ) ); ?>" data-width="<?php echo esc_attr( $image_data[1] ); ?>" data-height="<?php echo esc_attr( $image_data[2] ); ?>">
-				<?php echo wp_get_attachment_image( $card_image, 'large' ); ?>
+				<?php echo wp_get_attachment_image( $card_image, 'large', false, $lcp_attrs ); ?>
 					<?php
 					if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_image ) && $minimalio_hover === 'hover-image' ) {
 						echo wp_get_attachment_image( $minimalio_hover_image, 'full', '', [ 'class' => 'hover-image' ] );
@@ -99,7 +100,7 @@
 
 		<?php if ( $card_image ) : ?>
 			<figure class="relative w-full h-full post-card__image">
-				<?php echo wp_get_attachment_image( $card_image, 'large' ); ?>
+				<?php echo wp_get_attachment_image( $card_image, 'large', false, $lcp_attrs ); ?>
 
 				<?php
 				if ( isset( $minimalio_hover ) && ! empty( $minimalio_hover_image ) && $minimalio_hover === 'hover-image' ) {

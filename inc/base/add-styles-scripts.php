@@ -49,6 +49,10 @@ if ( ! function_exists( 'minimalio_scripts' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+		if ( ! is_user_logged_in() ) {
+			wp_dequeue_style( 'dashicons' );
+		}
+
 		// Add the theme site URL to available Jquery arguments in case this is needed (e.g. WP AJAX call URLS)
 		$theme = [ 'siteurl' => get_option( 'siteurl' ) ];
 		wp_localize_script( 'minimalio_theme', 'minimalio_theme', $theme );

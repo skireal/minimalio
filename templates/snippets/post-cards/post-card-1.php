@@ -2,7 +2,12 @@
 
 <?php $minimalio_hover = get_theme_mod( 'minimalio_settings_portfolio_hover_option' ); ?>
 <?php $minimalio_behaviour = get_theme_mod( 'minimalio_settings_portfolio_behaviour' ); ?>
-<?php $lcp_attrs = ( isset( $is_lcp ) && $is_lcp ) ? [ 'fetchpriority' => 'high', 'loading' => 'eager' ] : []; ?>
+<?php
+$sizes     = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw';
+$lcp_attrs = ( isset( $is_lcp ) && $is_lcp )
+	? [ 'fetchpriority' => 'high', 'loading' => 'eager', 'sizes' => $sizes ]
+	: [ 'sizes' => $sizes ];
+?>
 
 <?php if ( $minimalio_behaviour === 'html_in_lightbox' ) : ?>
 

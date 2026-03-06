@@ -84,8 +84,11 @@ class minimalio__Loader {
 				sort( $weights );
 				$weights_string = implode( ';', $weights );
 
-				echo '	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=' . $selected_font . ':wght@' . $weights_string . '&display=swap">';
+				$fonts_url = 'https://fonts.googleapis.com/css2?family=' . $selected_font . ':wght@' . $weights_string . '&display=swap';
+				echo '<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="' . $fonts_url . '" onload="this.onload=null;this.rel=\'stylesheet\'">
+<noscript><link rel="stylesheet" href="' . $fonts_url . '"></noscript>';
 			}
 		}
 	}

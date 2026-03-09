@@ -1493,6 +1493,12 @@ class Minimalio_Customizer {
 			'transport'         => 'refresh',
 		]);
 
+		$customizer->add_setting('minimalio_settings_copyright_ru', [
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'refresh',
+		]);
+
 		$customizer->add_setting('minimalio_settings_developer', [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -1680,6 +1686,19 @@ class Minimalio_Customizer {
 					'label'    => esc_html__( 'Copyright Message', 'minimalio' ),
 					'section'  => 'minimalio_footer_customizer',
 					'settings' => 'minimalio_settings_copyright',
+					'type'     => 'text',
+				]
+			)
+		);
+
+		$customizer->add_control(
+			new WP_Customize_Control(
+				$customizer,
+				'minimalio_options_footer_copyright_ru',
+				[
+					'label'    => esc_html__( 'Copyright Message (RU)', 'minimalio' ),
+					'section'  => 'minimalio_footer_customizer',
+					'settings' => 'minimalio_settings_copyright_ru',
 					'type'     => 'text',
 				]
 			)

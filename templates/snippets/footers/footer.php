@@ -6,7 +6,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-	$copyright_mesage = get_theme_mod( 'minimalio_settings_copyright' );
+	$current_lang     = function_exists( 'pll_current_language' ) ? pll_current_language() : '';
+	$copyright_ru     = get_theme_mod( 'minimalio_settings_copyright_ru' );
+	$copyright_mesage = ( $current_lang === 'ru' && $copyright_ru ) ? $copyright_ru : get_theme_mod( 'minimalio_settings_copyright' );
 	$developer        = get_theme_mod( 'minimalio_settings_developer' );
 
 if ( get_theme_mod( 'minimalio_settings_footer_logo' ) === 'general' ) {
@@ -45,7 +47,7 @@ endif;
 					<span class="footer__copyright-first-copy">
 						<?php if ( $copyright_mesage ) : ?>
 
-							<?php echo wp_kses_post( function_exists( 'pll__' ) ? pll__( $copyright_mesage ) : $copyright_mesage ); ?>
+							<?php echo wp_kses_post( $copyright_mesage ); ?>
 
 						<?php endif; ?>
 					</span>

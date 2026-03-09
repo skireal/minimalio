@@ -52,6 +52,8 @@ defined( 'ABSPATH' ) || exit;
 	<meta property="og:type" content="<?php echo esc_attr( $og_type ); ?>">
 	<meta property="og:image" content="<?php echo esc_url( $og_image ); ?>">
 	<meta property="og:site_name" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+  <meta name="yandex-verification" content="e1cb8666aae19622" />
+   <link rel="icon" href="/assets/dist/images/icon.png" type="image/png">
 	<?php wp_head(); ?>
 
 

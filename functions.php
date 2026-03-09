@@ -64,4 +64,5 @@ function minimalio_register_polylang_strings() {
 	}
 }
 add_action( 'init', 'minimalio_register_polylang_strings' );
+add_action( 'pll_init', 'minimalio_register_polylang_strings' );
 

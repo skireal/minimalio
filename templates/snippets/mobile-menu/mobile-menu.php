@@ -74,6 +74,23 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 			}
 			?>
 
+		<?php if ( function_exists( 'pll_the_languages' ) ) :
+			$pll_langs = pll_the_languages( [ 'raw' => 1 ] );
+			if ( $pll_langs ) : ?>
+			<div class="flex justify-center items-center gap-2 mt-4 mb-2 text-sm">
+				<?php
+				$i = 0;
+				foreach ( $pll_langs as $lang ) :
+					if ( $i++ > 0 ) echo '<span class="opacity-30">/</span>';
+					if ( $lang['current_lang'] ) : ?>
+						<span class="font-semibold"><?php echo esc_html( strtoupper( $lang['slug'] ) ); ?></span>
+					<?php else : ?>
+						<a href="<?php echo esc_url( $lang['url'] ); ?>"><?php echo esc_html( strtoupper( $lang['slug'] ) ); ?></a>
+					<?php endif;
+				endforeach; ?>
+			</div>
+		<?php endif; endif; ?>
+
 		<div class="container px-8 mobile-menu__container-social">
 			<span class="flex flex-wrap justify-center gap-2 mt-8 social__block">
 				<?php if ( $socials = minimalio_get_social_links() ) : ?>

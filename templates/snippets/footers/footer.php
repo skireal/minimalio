@@ -45,7 +45,7 @@ endif;
 					<span class="footer__copyright-first-copy">
 						<?php if ( $copyright_mesage ) : ?>
 
-							<?php echo wp_kses_post( $copyright_mesage ); ?>
+							<?php echo wp_kses_post( function_exists( 'pll__' ) ? pll__( $copyright_mesage ) : $copyright_mesage ); ?>
 
 						<?php endif; ?>
 					</span>

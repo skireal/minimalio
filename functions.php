@@ -51,3 +51,17 @@ function minimalio_load_textdomain() {
 
 add_action( 'after_setup_theme', 'minimalio_load_textdomain' );
 
+/**
+ * Register theme strings for Polylang translation
+ */
+function minimalio_register_polylang_strings() {
+	if ( ! function_exists( 'pll_register_string' ) ) {
+		return;
+	}
+	$copyright = get_theme_mod( 'minimalio_settings_copyright' );
+	if ( $copyright ) {
+		pll_register_string( 'copyright', $copyright, 'Theme' );
+	}
+}
+add_action( 'init', 'minimalio_register_polylang_strings' );
+

@@ -78,20 +78,13 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 			$all_lang_slugs = pll_languages_list();
 			$pll_lang_urls  = function_exists( 'pll_the_languages' ) ? pll_the_languages( [ 'raw' => 1 ] ) : [];
 			$current_lang   = pll_current_language();
-			if ( $all_lang_slugs ) : ?>
-			<div class="flex justify-center items-center gap-2 mt-4 mb-2 text-sm">
-				<?php
-				$i = 0;
-				foreach ( $all_lang_slugs as $slug ) :
-					if ( $i++ > 0 ) echo '<span class="opacity-30">/</span>';
-					if ( $slug === $current_lang ) : ?>
-						<span class="font-semibold"><?php echo esc_html( strtoupper( $slug ) ); ?></span>
-					<?php else :
-						$url = isset( $pll_lang_urls[ $slug ]['url'] ) ? $pll_lang_urls[ $slug ]['url'] : pll_home_url( $slug );
-						?>
-						<a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( strtoupper( $slug ) ); ?></a>
-					<?php endif;
-				endforeach; ?>
+			$other_langs    = array_filter( $all_lang_slugs, fn( $s ) => $s !== $current_lang );
+			if ( $other_langs ) :
+				$other_slug = reset( $other_langs );
+				$other_url  = isset( $pll_lang_urls[ $other_slug ]['url'] ) ? $pll_lang_urls[ $other_slug ]['url'] : pll_home_url( $other_slug );
+				?>
+			<div class="flex justify-center mt-4 mb-2 text-sm tracking-widest">
+				<a href="<?php echo esc_url( $other_url ); ?>" class="uppercase border-b border-current pb-px hover:opacity-60 transition-opacity"><?php echo esc_html( $other_slug ); ?></a>
 			</div>
 		<?php endif; endif; ?>
 

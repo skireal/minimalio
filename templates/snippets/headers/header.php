@@ -106,13 +106,15 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 			$all_lang_slugs = pll_languages_list();
 			$pll_lang_urls  = function_exists( 'pll_the_languages' ) ? pll_the_languages( [ 'raw' => 1 ] ) : [];
 			$current_lang   = pll_current_language();
+			$lang_flags     = [ 'en' => '🇬🇧', 'ru' => '🇷🇺' ];
 			$other_langs    = array_filter( $all_lang_slugs, fn( $s ) => $s !== $current_lang );
 			if ( $other_langs ) :
 				$other_slug = reset( $other_langs );
 				$other_url  = isset( $pll_lang_urls[ $other_slug ]['url'] ) ? $pll_lang_urls[ $other_slug ]['url'] : pll_home_url( $other_slug );
+				$flag       = isset( $lang_flags[ $other_slug ] ) ? $lang_flags[ $other_slug ] . ' ' : '';
 				?>
-			<div class="language-switcher hidden lg:flex items-center ml-6 pl-6 border-l border-current border-opacity-20 text-sm tracking-widest">
-				<a href="<?php echo esc_url( $other_url ); ?>" class="hover:opacity-60 transition-opacity uppercase"><?php echo esc_html( $other_slug ); ?></a>
+			<div class="language-switcher flex items-center ml-8 text-sm tracking-widest">
+				<a href="<?php echo esc_url( $other_url ); ?>" class="flex items-center gap-1 hover:opacity-60 transition-opacity uppercase"><?php echo $flag . esc_html( strtoupper( $other_slug ) ); ?></a>
 			</div>
 			<?php endif; endif; ?>
 

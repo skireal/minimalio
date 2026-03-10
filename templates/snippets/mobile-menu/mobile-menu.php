@@ -75,7 +75,7 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 			?>
 
 		<?php if ( function_exists( 'pll_the_languages' ) ) :
-			$pll_langs = pll_the_languages( [ 'raw' => 1 ] );
+			$pll_langs = pll_the_languages( [ 'raw' => 1, 'hide_if_no_translation' => 0 ] );
 			if ( $pll_langs ) : ?>
 			<div class="flex justify-center items-center gap-2 mt-4 mb-2 text-sm">
 				<?php

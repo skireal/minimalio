@@ -107,7 +107,7 @@ $social_media_style = get_theme_mod( 'minimalio_settings_social_media_style' );
 			$pll_lang_urls  = function_exists( 'pll_the_languages' ) ? pll_the_languages( [ 'raw' => 1 ] ) : [];
 			$current_lang   = pll_current_language();
 			if ( $all_lang_slugs ) : ?>
-			<div class="language-switcher hidden lg:flex items-center gap-1 text-sm mr-4">
+			<div class="language-switcher flex items-center gap-1 text-sm mr-4">
 				<?php
 				$i = 0;
 				foreach ( $all_lang_slugs as $slug ) :

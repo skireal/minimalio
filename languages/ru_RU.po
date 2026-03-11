@@ -1744,7 +1744,7 @@ msgstr "https://mikulaskarpeta.net/en"
 
 #: template-parts/section-hero.php
 msgid "contemporary"
-msgstr "contemporary"
+msgstr "современный"
 
 #: template-parts/section-hero.php
 msgid "artist"

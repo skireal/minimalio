@@ -5444,3 +5444,7 @@ figcaption {
   font-size: 22px;
   margin-bottom: 5px;
 }
+
+.language-switcher {
+  margin-left: 2rem;
+}

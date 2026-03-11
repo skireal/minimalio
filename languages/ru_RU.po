@@ -1744,11 +1744,11 @@ msgstr "https://mikulaskarpeta.net/en"
 
 #: template-parts/section-hero.php
 msgid "contemporary"
-msgstr "современное"
+msgstr "современная"
 
 #: template-parts/section-hero.php
 msgid "artist"
-msgstr "художник"
+msgstr "художница"
 
 #: template-parts/section-about.php
 msgid "Press"

@@ -14,7 +14,7 @@ $image_url   = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
 <section class="section-hero" id="hero">
 	<div class="container">
 		<div class="hero-inner">
-			<div class="hero-name hero-name--top"><span>veronika</span><span><?php esc_html_e( 'contemporary', 'minimalio' ); ?></span></div>
+			<div class="hero-name hero-name--top"><span><?php esc_html_e( 'veronika', 'minimalio' ); ?></span><span><?php esc_html_e( 'contemporary', 'minimalio' ); ?></span></div>
 			<div class="hero-image-link">
 				<img
 					src="<?php echo esc_url( $image_url ); ?>"
@@ -25,7 +25,7 @@ $image_url   = get_template_directory_uri() . '/assets/dist/images/borsch.jpg';
 				>
 				<div class="hero-bubbles"></div>
       </div>
-      <div class="hero-name hero-name--bottom"><span>KHACHATURIAN</span><span><?php esc_html_e( 'artist', 'minimalio' ); ?></span></div>
+      <div class="hero-name hero-name--bottom"><span><?php esc_html_e( 'KHACHATURIAN', 'minimalio' ); ?></span><span><?php esc_html_e( 'artist', 'minimalio' ); ?></span></div>
 		</div>
 	</div>
 </section>

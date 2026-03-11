@@ -1796,3 +1796,11 @@ msgstr "Работы"
 #: template-parts/section-artworks.php
 msgid "View all works →"
 msgstr "Все работы →"
+
+msgctxt ""
+msgid "veronika"
+msgstr "Вероника"
+
+msgctxt ""
+msgid "KHACHATURIAN"
+msgstr "ХАЧАТУРЯН"
